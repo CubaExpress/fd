@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CubaMax</title>
+  <style>
+    /* Reset y estilos globales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f4f7fc;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    /* Menú de navegación con nuevo esquema de colores */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(135deg, #283593, #3f51b5); /* Tonos de azul profundo */
+      padding: 15px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      font-size: 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    /* Barra de mensaje con nuevo esquema de colores */
+    .barra-mensaje {
+      background: linear-gradient(135deg, #ff8a65, #ff7043); /* Tonos cálidos */
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mensaje {
+      display: inline-block;
+      position: absolute;
+      left: 100%;
+      animation: moverMensaje 12s linear infinite;
+    }
+    @keyframes moverMensaje {
+      0% { left: 100%; }
+      100% { left: -100%; }
+    }
+    /* Resto de estilos (se mantienen los que tenías) */
+    header {
+      background: linear-gradient(135deg, #0059b3, #003366);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      animation: slideDown 1s ease-out forwards;
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #0059b3;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      text-align: justify;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+    .service p {
+      font-size: 16px;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Media Queries para dispositivos móviles */
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      section h2 { font-size: 28px; }
+      section {
+        padding: 40px 15px;
+      }
+      nav a {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 0 5px;
+      }
+      .barra-mensaje {
+        font-size: 20px;
+        padding: 25px;
+      }
+      .service {
+        width: 45%;
+      }
+      .services-list {
+        gap: 15px;
+      }
+    }
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 5px 0;
+        font-size: 16px;
+        padding: 8px 15px;
+      }
+      header h1 {
+        font-size: 32px;
+      }
+      section {
+        padding: 30px 10px;
+      }
+      section h2 {
+        font-size: 24px;
+      }
+      section p {
+        font-size: 16px;
+      }
+      .barra-mensaje {
+        font-size: 18px;
+        padding: 20px;
+      }
+      .service {
+        width: 90%;
+        padding: 15px;
+      }
+    }
+  </style>
+  
+
+</head>
+<body>
+  <!-- Menú y barra de mensaje -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="sobre-nosotros.html">Sobre Nosotros</a>
+    <a href="calculadora.html">Calculadora de Envíos</a>
+  </nav>
+  <div class="barra-mensaje">
+    <span class="mensaje">¡Aprovecha un 15% de descuento en tu envío! 📦 Envíos rápidos y seguros a Cuba.</span>
+  </div>
+
+  <!-- Contenido "Sobre Nosotros" -->
+ 
+
+  <section class="intro">
+    <h2>Bienvenido a CubaMax</h2>
+    <p>
+      En CubaMax somos tu aliado confiable para realizar envíos a Cuba de manera rápida y segura. Nos especializamos en gestionar envíos que llegan en un plazo de 3 a 4 días, asegurando la calidad y el cuidado en cada pedido.
+    </p>
+  </section>
+
+  <section class="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-list">
+      <div class="service">
+        <h3>Combos de Alimentos</h3>
+        <p>Paquetes cuidadosamente seleccionados con productos esenciales para el hogar.</p>
+      </div>
+      <div class="service">
+        <h3>Productos Electrónicos</h3>
+        <p>Accesorios y gadgets de última generación para mantenerte siempre conectado.</p>
+      </div>
+      <div class="service">
+        <h3>Electrodomésticos</h3>
+        <p>Artículos para el hogar que facilitan tu vida diaria con tecnología moderna.</p>
+      </div>
+      <div class="service">
+        <h3>Vehículos</h3>
+        <p>Gestión y envío de vehículos, adaptados a tus necesidades y a la normativa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="commitment">
+    <h2>Nuestro Compromiso</h2>
+    <p>
+      Trabajamos con socios logísticos de primer nivel para garantizar que cada envío cumpla con los más altos estándares de seguridad y puntualidad. En CubaMax estamos comprometidos con la innovación y la excelencia, haciendo que cada pedido sea una experiencia sin complicaciones.
+    </p>
+  </section>
+</body>
+</html>
